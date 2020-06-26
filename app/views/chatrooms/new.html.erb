@@ -1,0 +1,19 @@
+<div class="ui two column very relaxed stackable grid ">
+    <div class="column">
+     <%= form_for(:user, :html => {class: "form-horizontal", role: "form"}) do |f|%>
+     <div class="field ">
+     <%= f.label :username %>
+     <%= f.text_field :username, class: "form-control",  placeholder: "Name of the user", autofocus: true %>
+    </div>
+     
+        <div class="field ">
+     <%= f.label :password %> <br/>
+     <%= f.password_field :password, class: "form-control", placeholder: "password" %>
+	</div>
+
+     <%= f.submit "Sign up", class: "btn btn-primary btn-lg"%>
+	 <% end %>
+    
+  </div>
+ 
+</div>

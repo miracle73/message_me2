@@ -1,0 +1,38 @@
+<h1 class="center"> WELCOME TO OUR HOME PAGE </h1>
+<h2 class="ui center aligned medium icon header">
+ <i class=" orange signup icon"></i>
+  Login
+</h2>
+<div class="ui placeholder segment orange">
+  <div class="ui two column very relaxed stackable grid ">
+    <div class="column">
+      <%= form_for( :session, :html => {class: "ui form", role: "form"},url: login_path, local: true) do |f| %>
+        <div class="field ">
+          <%= f.label :username %>
+          <div class="ui left icon input">
+          <%= f.text_field :username, placeholder: "username" %>  
+            <i class="user icon"></i>
+          </div>
+        </div>
+        <div class="field">
+            <%= f.label :password %>
+          <div class="ui left icon input">
+              <%= f.password_field :password, placeholder: "password" %>  
+            <i class="lock icon"></i>
+          </div>
+        </div>
+        <%= f.submit "login",class: "ui blue submit button orange" %>
+		<% end %>
+      </div>
+    </div>
+    
+  <div class="ui vertical divider">
+    <div class="right aligned column hen">
+      <div class="ui big button orange hen">
+        <i class="signup icon secondry"></i>
+        <%= link_to "Sign Up", signin_path %>
+      </div>
+    </div>
+  </div>
+  
+</div>

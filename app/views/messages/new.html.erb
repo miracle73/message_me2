@@ -1,0 +1,57 @@
+
+<% if @message.errors.any? %>
+<div class="row">
+<div class="errormessages">
+</h4>
+<%= pluralize(@mesage.errors.count, "error") %>
+prohibited this message from being saved </h4>
+<ul>
+<% @message.errors.full_messages.each do |msg| %>
+<li> <%= msg %> </li>
+<% end %>
+</ul>
+</div>
+</div>
+<% end %>
+
+<h1 class="center"> Messages in the chatroom </h1>
+<h2 class="ui center aligned medium icon header">
+ <i class="address book orange outline icon"></i>
+  Chatroom
+</h2>
+<div class="ui equal width grid">
+ <div class="twelve wide column">
+  <div class="ui fluid raised card chatbox" id="height" >
+   <div class="content">
+    <div class="ui large feed">
+	
+     <div class="event" id="event2" >
+	 <% @messages.each do |message| %>
+	 
+	<p> <%= message.user.username%>:
+	<%=  message.body %> </p>
+   
+     
+    
+      
+      
+    <% end %>
+    </div>
+	
+	<div class="extra content" >
+	<%= form_for(:message, :html => {class: "ui reply form ", role: "form"}) do |f| %>
+        <div class="field">
+		<%= f.text_field :body %>
+        <%= f.submit class: "bordered inverted  orange" %>
+        </div>
+      <% end %>
+   </div>
+  </div> 
+</div>
+</div>
+
+
+
+   
+		
+  
