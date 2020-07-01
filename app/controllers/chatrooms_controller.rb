@@ -11,6 +11,7 @@ def create
 if @user.save
 session[:user_id] = @user.id
 flash[:success] = "welcome"
+ConfirmMailer.confirmation(current_user).deliver_now
 redirect_to signup_path
 else
 render :new

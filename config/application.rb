@@ -15,5 +15,15 @@ module MessageMe
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
-  end
+    ActionMailer::Base.smtp_settings = {
+:address => 'smtp.gmail.com',
+:port => '587',
+:authentication => :plain,
+:user_name => 'nwadiaromiraclechukwuma@gmail.com',
+:password => 'excellence',
+:domain => 'MessageMeapp.com',
+
+:enable_starttls_auto => true}
+
+end
 end

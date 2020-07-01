@@ -11,5 +11,6 @@ get "logout", to: "sessions#destroy"
 post "signup", to: "messages#create"
 get  "signin", to: "chatrooms#new"
 post  "signin", to: "chatrooms#create"
+mount ActionCable.server => '/cable'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

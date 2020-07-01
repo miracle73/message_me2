@@ -10,6 +10,7 @@ def create
 @message.user = current_user
 if @message.save
 flash[:success]= "great is your name lord"
+ConfirmMailer.confirmation(current_user).deliver_now
 ActionCable.server.broadcast "message_channel",  
                               body: @message.body, user: @message.user.username
 redirect_to signup_path 
